@@ -50,6 +50,15 @@ const Game = () => {
       </>
     )
   }
+
+  /* Create the Randomize Button */
+  const createRandomButton = () => {
+    return (
+      <div className='random'>
+        <button className="randomize animated pulse infinite" onClick={updateSquareColors}>Randomize</button>
+      </div>
+    )
+  };
   
   /* This randomizes all .square colors on the gameboard*/
   const updateSquareColors = () => {
@@ -63,6 +72,7 @@ const Game = () => {
       <div className="squares">
       {generateGameBoard()}
       </div>
+      {createRandomButton()}
     </div>
   )
 }

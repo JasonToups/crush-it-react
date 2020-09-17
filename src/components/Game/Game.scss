@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Suez+One');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
+
 body {
   background-color: rgb(155, 155, 155);
   font-family: 'Suez One', serif;
@@ -66,10 +69,11 @@ button {
 }
 
 .randomize {
+  font-family: 'Suez One', serif;
   margin-top: 5px;
   width: auto;
   height: auto;
-  padding: 1.5%;
+  padding: 10px 20px 15px 20px;
   box-shadow: inset 0 -6px 3px 0 #388d7e, inset 0 7px 3px 0 #b6f8de;
   background-image: linear-gradient(to bottom, #99ffd3, #0ba073);
 }
