@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Game.scss';
-// import $ from 'jquery'
+import $ from 'jquery'
 
 const Game = () => {
   const [boardWidth, setBoardWidth] = useState(7);
@@ -16,53 +16,20 @@ const Game = () => {
  
   /* -- Chooses a random color from the color array -- */
   /* Colors are stored in game.colors */
-  /* The number of colors are stored in game.numOfColors */
+  /* The number of colors are stored in numOfColors */
   const applyRandomColor = () => {
     const colorsSlice = colors.slice(0, numOfColors);
     const index = Math.floor(Math.random() * colorsSlice.length)
     return colorsSlice[index];
   }
-  /* ------- Creating the Game Board ------- */
-  /* It uses the dimensions from the game.boardWidth & game.boardHeight to determine board size */
-  // const generateGameBoard = () => {
-  //   const $squares = $('.squares');
-  //   for (let i = 0; i < boardHeight; i++) {
-  //     const $rows = $(`<div className="rows" id=${i} key=${i}/>`);
-  //     // console.log('appending a rows');
-  //     for (let j = 0; j < boardWidth; j++) {
-  //       // console.log('appending a square');
-  //       const $square = $('<div className="square"/>');
-  //       $square.css('background-color', applyRandomColor());
-  //       $rows.append($square);
-  //     }
-  //     $squares.append($rows);
-  //   }
-  // }
 
-  
-  // const generateGameBoard = () => {
-  //   let gameBoard = [];
-  //   let row = [];
-  //   let square = [];
-  //   // const $squares = $('.squares');
-  //   for (let i = 0; i < boardHeight; i++) {
-  //     row = (`<div className="rows" id=${i} key=${i}/>`);
-  //     // console.log('appending a rows');
-  //     for (let j = 0; j < boardWidth; j++) {
-  //       // console.log('appending a square');
-  //       square = (`<div className="square" style={{backgroundColor: ${applyRandomColor}}}/>`);
-  //       row.push(square);
-  //     }
-  //     gameBoard.push(row);
-  //   }
-  //   console.log(gameBoard)
-  // }
+  /* ------- Creating the Game Board ------- */
   const generateSquares = () => {
     let squares = [];
-    for (let i = 0; i < boardHeight; i++){
+    for (let i = 0; i < boardWidth; i++){
       let color = applyRandomColor();
       squares.push(
-        <div className='square' style={{backgroundColor: `${color}`}}></div>
+        <div className='square' style={{backgroundColor: `${color}`}} />
       )
     }
     return squares
@@ -85,11 +52,11 @@ const Game = () => {
   }
   
   /* This randomizes all .square colors on the gameboard*/
-  // const updateSquareColors = () => {
-  //   $('.square').each(function () {
-  //     $(this).css('background-color', applyRandomColor());
-  //   })
-  // }
+  const updateSquareColors = () => {
+    $('.square').each(function () {
+      $(this).css('background-color', applyRandomColor());
+    })
+  }
 
   return (
     <div className="gameboard">
