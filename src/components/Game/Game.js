@@ -88,7 +88,6 @@ const Game = () => {
   const validateMatchArray = () => {
     // let matchArray = matchArray;
     console.log('validate match array start');
-    console.log(matchArray);
 
     for (let i = 0; i <= matchArray.length; i++) {
       console.log('starting loop');
@@ -114,6 +113,7 @@ const Game = () => {
           : false;
 
       /* Getting the background colors from the squares in 4 cardinal directions from the current index  */
+      // WORKING
       let currentSquareColor = $(currentSquare).css('background-color');
       let squareAboveColor = $(squareAbove).css('background-color');
       let squareBelowColor = $(squareBelow).css('background-color');
@@ -194,8 +194,9 @@ const Game = () => {
   const handlePoke = event => {
     event.preventDefault();
     // console.log(event.target.style.backgroundColor);
-    matchArray = event.target;
-    // console.log(matchArray);
+    matchArray = [];
+    matchArray.push(event.target);
+    console.log(event.target);
     validateMatchArray();
   };
 
